@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { FC } from 'react';
 import ReactMapboxGl from 'react-mapbox-gl';
 
-const Map = ReactMapboxGl({
+const MapView = ReactMapboxGl({
   accessToken: process.env.JUNO_MAPBOX_KEY,
 });
 
-const MapComponent = (props) => {
+interface MapViewProps {
+  center: [number, number];
+}
+
+const Map: FC<MapViewProps> = ({ children, ...props }) => {
   return (
-    <Map
+    <MapView
       style="mapbox://styles/mapbox/streets-v9"
       containerStyle={{
         height: '100vh',
@@ -18,4 +22,4 @@ const MapComponent = (props) => {
   );
 };
 
-export default MapComponent;
+export default Map;
