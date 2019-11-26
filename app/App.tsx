@@ -1,12 +1,13 @@
 import React from 'react';
 
-import Map from './components/Map';
+import Map from 'components/Map';
+import Provider from 'data/Provider';
 
 const App = () => (
-  <React.Fragment>
+  <Provider>
     <Map center={[-104.991531, 39.742043]} />
     {/* UI Components here */}
-  </React.Fragment>
+  </Provider>
 );
 
 export default App;
