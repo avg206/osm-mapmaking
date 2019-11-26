@@ -3,20 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@juno/toolbox": "git+ssh://git.junolab.net/fl/toolbox.git",
+    "@juno/types": "git+ssh://git.junolab.net/fl/types.git",
+    "@juno/ui-private": "git+ssh://git.junolab.net/fl/ui-private.git",
     "mapbox-gl": "^1.5.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-mapbox-gl": "^4.7.3",
-    "react-scripts": "3.2.0"
+    "react-mapbox-gl": "^4.7.3"
   },
   "devDependencies": {
-    "@avg206/frontend-config": "github:avg206/frontend-config"
+    "@avg206/frontend-config": "github:avg206/frontend-config",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "juno-scripts build",
+    "start": "node mocks"
   },
   "browserslist": {
     "production": [
