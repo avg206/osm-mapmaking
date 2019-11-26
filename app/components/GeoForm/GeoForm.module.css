@@ -1,0 +1,10 @@
+.form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+}
+
+.input input {
+  line-height: normal;
+}
