@@ -1,5 +1,6 @@
 import React, { useCallback, FC } from 'react';
 import { Form, Input } from '@juno/ui-private/components/formik';
+// @ts-ignore
 import { CollapsibleCard, Button } from '@juno/ui-private/components';
 
 import { useDataContext } from 'data/context';

@@ -3,6 +3,7 @@
   top: 0;
   left: 0;
   margin: 20px;
+  min-width: 390px;
 }
 
 .input input {
