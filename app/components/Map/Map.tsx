@@ -5,9 +5,10 @@ import * as actions from 'data/actions';
 import { useDataContext } from 'data/context';
 
 import RoadsLayer from './RoadsLayer';
+// import BoundingBox from './BoundingBox';
 
 const MapView = ReactMapboxGl({
-  accessToken: '',
+  accessToken: process.env.JUNO_MAPBOX_KEY || '',
 });
 
 interface MapViewProps {
@@ -37,6 +38,7 @@ const Map: FC<MapViewProps> = ({ children, ...props }) => {
       {state.layers.map((layer) => (
         <RoadsLayer key={layer.id} {...layer} />
       ))}
+      {/*<BoundingBox />*/}
     </MapView>
   );
 };
