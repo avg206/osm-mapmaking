@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useCallback, FC } from 'react';
 import { Form, Input } from '@juno/ui-private/components/formik';
 import { CollapsibleCard, Button } from '@juno/ui-private/components';
 
+import { useDataContext } from 'data/context';
+import { saveLayer } from 'data/actions';
 import GeoInput from './GeoInput';
 import style from './GeoForm.module.css';
 
-const GeoForm = ({ onSubmit = (...args) => console.log(...args) }) => {
+const GeoForm: FC = () => {
+  const { dispatch } = useDataContext();
+
+  const onSubmit = useCallback(
+    ({ values, formikActions }, q) => {
+      dispatch(saveLayer(values));
+      formikActions.resetForm();
+    },
+    [dispatch]
+  );
+
   return (
     <CollapsibleCard noHeaderMargin header="Add Layer" className={style.form}>
       <Form onSubmit={onSubmit} initialValues={{}}>

@@ -1,10 +1,10 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, FC } from 'react';
 import { File } from '@juno/ui-private/components/formik';
 import { useFormikContext } from 'formik';
 
 import style from './GeoForm.module.css';
 
-const GeoInput = () => {
+const GeoInput: FC = () => {
   const form = useFormikContext();
 
   const handleFileUpload = useCallback((path, file: Blob) => {
@@ -15,7 +15,7 @@ const GeoInput = () => {
     reader.onload = () => {
       if (typeof reader.result === 'string') {
         try {
-          form.setFieldValue('geojson', JSON.parse(reader.result));
+          form.setFieldValue('geoData', JSON.parse(reader.result));
         } catch (err) {
           form.setFieldError('file', 'invalid file format');
         }
