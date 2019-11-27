@@ -11,4 +11,7 @@ export const reducer = createReducer({
   [constants.Layers.Save]: (state, action) => {
     state.layers.push(action.payload);
   },
+  [constants.Layers.Remove]: (state, action) => {
+    state.layers = state.layers.filter((x) => x.id !== action.payload);
+  },
 });

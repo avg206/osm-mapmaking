@@ -5,6 +5,7 @@ export interface LayerPayload {
 
 export interface Layer extends LayerPayload {
   id: string;
+  color: string;
 }
 
 export interface AppState {

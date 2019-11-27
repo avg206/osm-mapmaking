@@ -9,3 +9,7 @@
 .input input {
   line-height: normal;
 }
+
+.hr {
+  margin: 24px 0 16px;
+}

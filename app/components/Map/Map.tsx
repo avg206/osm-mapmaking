@@ -14,8 +14,16 @@ interface MapViewProps {
   center: [number, number];
 }
 
+const geo1Data = require('mocks/geo1.json');
+const geo2Data = require('mocks/geo2.json');
+
 const Map: FC<MapViewProps> = ({ children, ...props }) => {
-  const { state } = useDataContext();
+  const { state, dispatch } = useDataContext();
+
+  useEffect(() => {
+    dispatch(actions.saveLayer({ name: 'Layer 1', geoData: geo1Data }));
+    dispatch(actions.saveLayer({ name: 'Layer 2', geoData: geo2Data }));
+  }, []);
 
   return (
     <MapView

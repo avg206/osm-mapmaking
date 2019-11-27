@@ -1,6 +1,7 @@
 const Actions = {
   Layers: {
     Save: null,
+    Remove: null,
   },
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { hot } from 'react-hot-loader/root';
 
 import Provider from 'data/Provider';
 import Map from './components/Map';
@@ -11,4 +12,4 @@ const App = () => (
   </Provider>
 );
 
-export default App;
+export default hot(App);

@@ -3,7 +3,7 @@ import { Source, Layer } from 'react-mapbox-gl';
 
 import { Layer as LayerType } from 'types';
 
-const RoadsLayer: FC<LayerType> = ({ id, geoData }) => (
+const RoadsLayer: FC<LayerType> = ({ id, geoData, color }) => (
   <>
     <Source
       id={`${id}-source`}
@@ -17,8 +17,8 @@ const RoadsLayer: FC<LayerType> = ({ id, geoData }) => (
       sourceId={`${id}-source`}
       type="line"
       paint={{
-        'line-color': 'rgba(255, 0, 0, 1)',
-        'line-width': 2,
+        'line-color': color,
+        'line-width': 3,
       }}
     />
   </>
